@@ -56,7 +56,6 @@ export default class Todo extends Component {
 
     handleClear(){
         this.refresh()
-        this.state.description = ""
     }
 
     render(){

@@ -55,15 +55,14 @@ export default class Todo extends Component {
     }
 
     handleClear(){
-        this.refresh()
-        this.state.description = ""
+
     }
 
     render(){
         return (
             <div>
                 <PageHeader name="Tarefas" small="Cadastro"></PageHeader>
-                <TodoForm description={this.state.description} handleAdd={this.handleAdd} handleChange={this.handleChange} handleSearch={this.handleSearch} handleClear={this.handleClear}></TodoForm>
+                <TodoForm description={this.state.description} handleAdd={this.handleAdd} handleChange={this.handleChange} handleSearch={this.handleSearch}></TodoForm>
                 <TodoList list={this.state.list} handleRemove={this.handleRemove} handleMarkAsDone={this.handleMarkAsDone} handleMarkAsPending={this.handleMarkAsPending}></TodoList>
             </div>
         )
