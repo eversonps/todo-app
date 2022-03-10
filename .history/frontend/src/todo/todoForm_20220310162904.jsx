@@ -6,7 +6,7 @@ export default props => {
     const keyHandler = (e) => {
         if(e.key === "Enter"){
             e.shiftKey ? props.handleSearch() : props.handleAdd()
-        } else if(e.key === "Escape"){
+        } else if(e.key === "escape"){
             props.handleClear()
         }
     }
@@ -14,7 +14,7 @@ export default props => {
     return (
         <div role="form" className="todoForm">
             <Grid cols="12 9 10">
-                <input type="text" id="description" className="form-control" placeholder="Adicione uma tarefa" value={props.description} onKeyUp={keyHandler} onChange={props.handleChange}/>
+                <input type="text" id="description" className="form-control" placeholder="Adicione uma tarefa" value={props.description} onChange={props.handleChange}/>
             </Grid>
     
             <Grid cols="12 3 2">
