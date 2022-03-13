@@ -10,7 +10,9 @@ export default (state = initalState, action) =>{
         case "TODO_SEARCHED":
             return {...state, list: action.payload.data}
         case "TODO_ADDED":
-            return {...state, description: "", list: action.payload.data}
+            return {...state, list: action.payload.data}
+        case "TODO_CLEAR":
+            return {...state, description: ""}
         default: 
             return state
     }
