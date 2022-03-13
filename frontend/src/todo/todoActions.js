@@ -14,3 +14,24 @@ export const search = () => {
         payload: request
     }
 }
+
+// middleware redux-multi - Não utilizado porque executa as multiplas actions ao mesmo tempoS 
+
+/* export const add = (description) => {
+    const request = axios.post(URL, {description}).then(resp => this.refresh())
+    return [
+        {
+            type: "TODO_ADDED",
+            payload: request
+        },
+        search()
+    ]  
+} */
+
+export const add = (description) => {
+    return dispatch => {
+        axios.post(URL, {description})
+        .then(resp => dispatch({type: "TODO_ADDED", payload: resp.data}))
+        .then(resp => dispatch(search()))
+    }
+}
